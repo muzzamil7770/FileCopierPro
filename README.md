@@ -55,7 +55,7 @@ Designed for users who need **speed, control, and clarity** while copying large 
    Use **Pause All**, **Resume All**, or **Cancel All** anytime.
 
 8. **Completion**  
-   Once done, you’ll see clear status (`done`, `cancelled`, or `failed`).
+   Once done, you'll see clear status (`done`, `cancelled`, or `failed`).
 
 ---
 
@@ -63,91 +63,51 @@ Designed for users who need **speed, control, and clarity** while copying large 
 
 ```mermaid
 flowchart TD
-    A[Launch Application] --> B["Add Files / Folders"]
-    B --> C["Preview Dialog\n(Show list with checkboxes)"]
-    C --> D["Select Items to Copy"]
-    D --> E["Choose Destination Folder"]
-    E --> F["Add Tasks to Queue"]
-    
-    F --> G["Click 'Start All'"]
-    G --> H["Parallel Workers\n(Max 4 concurrent)"]
-    
-    H --> I["Real-time Monitoring"]
-    I --> J["Progress + Speed + ETA\nPer Task + Overall"]
-    
-    J --> K{"User Action?"}
+    A[Launch Application] --> B[Add Files / Folders]
+    B --> C[Preview Dialog - Show list with checkboxes]
+    C --> D[Select Items to Copy]
+    D --> E[Choose Destination Folder]
+    E --> F[Add Tasks to Queue]
+    F --> G[Click Start All]
+    G --> H[Parallel Workers - Max 4 concurrent]
+    H --> I[Real-time Monitoring]
+    I --> J[Progress + Speed + ETA Per Task + Overall]
+    J --> K{User Action?}
     K -->|Pause All| L[Pause All Tasks]
     K -->|Resume All| M[Resume All Tasks]
-    K -->|Cancel All| N[Cancel All Tasks]
-    
+    K -->|Cancel All| N[Mark Tasks as Cancelled]
     L --> I
     M --> I
-    N --> O[Mark Tasks as Cancelled]
-    
-    I --> P["All Tasks Completed?"]
-    P -->|Yes| Q["Show Final Status\n✅ Done"]
+    I --> P{All Tasks Completed?}
+    P -->|Yes| Q[Show Final Status - Done]
     P -->|No| I
-
-
+```
 
 ---
 
 ## 📸 Screenshots
 
 ### 1. Main Application Window
-![Main Window](public/images/_1 (1).png)
+![Main Window](public/images/screenshot1.png)
 
 ### 2. Add Files & Folders + Preview Dialog
-![Preview Dialog](public/images/_1 (2).png)
+![Preview Dialog](public/images/screenshot2.png)
 
 ### 3. Real-time Copying in Progress
-![Copying in Progress](public/images/_1 (3).png)
+![Copying in Progress](public/images/screenshot3.png)
 
 ### 4. Pause / Resume / Cancel Controls
-![Controls](public/images/_1 (4).png)
+![Controls](public/images/screenshot4.png)
 
 ### 5. Overall Progress & Completed Tasks
-![Overall Progress](public/images/_1 (5).png)
+![Overall Progress](public/images/screenshot5.png)
 
 ---
 
-## 🚀 Workflow
+## 🛠 Project Structure
 
-1. Click **"Add Files / Folders"**
-2. Select files and folders → Preview dialog appears
-3. Check/uncheck items you want to copy
-4. Choose destination folder
-5. Click **"Start All"** to begin parallel copying
-6. Monitor live progress, speed, and ETA
-7. Use Pause/Resume/Cancel as needed
-
----
-
-## 📊 Workflow Diagram
-
-```mermaid
-flowchart TD
-    A[Launch App] --> B[Add Files/Folders]
-    B --> C[Preview Dialog with Checkboxes]
-    C --> D[Select Destination]
-    D --> E[Queue Tasks]
-    E --> F[Start All]
-    F --> G[Parallel Copying (max 4)]
-    G --> H[Live Progress + Speed + ETA]
-    H --> I[Pause / Resume / Cancel]
-    I --> J[Overall Progress Update]
-    J --> K[All Tasks Done]
-
-
-
-
-
-
-
-
-🛠 Project Structure
-
-    FileCopierPro/
+```
+FileCopierPro/
 ├── main.py                     # Application entry point
 ├── core/
 │   ├── task.py                 # FileTask dataclass
@@ -160,11 +120,15 @@ flowchart TD
 │   └── formatter.py            # Human readable size, speed, ETA
 ├── README.md
 └── requirements.txt
+```
 
+---
 
+## 💾 Installation & Usage
 
-##💾 Installation & Usage
-# Option 1: Run from Source
+### Option 1: Run from Source
+
+```bash
 git clone https://github.com/muzzamil7770/FileCopierPro.git
 cd FileCopierPro
 
@@ -177,39 +141,58 @@ pip install PySide6
 
 # Run the application
 python main.py
+```
 
+### Option 2: Download Executable (Recommended)
 
-Option 2: Download Executable (Recommended)
-Go to the Releases page and download FileCopierPro.exe. 
+Go to the [Releases](https://github.com/muzzamil7770/FileCopierPro/releases) page and download `FileCopierPro.exe`.
 
-🔨 How to Build .exe
-Simple Build (Recommended):
-PowerShellpyinstaller --name "FileCopierPro" --windowed --onefile --clean --noconfirm main.py
-Build with PySide6 Plugins (if needed):
-PowerShellpyinstaller --name "FileCopierPro" --windowed --onefile --clean --noconfirm ^
+---
+
+## 🔨 How to Build .exe
+
+### Simple Build (Recommended):
+
+```powershell
+pyinstaller --name "FileCopierPro" --windowed --onefile --clean --noconfirm main.py
+```
+
+### Build with PySide6 Plugins (if needed):
+
+```powershell
+pyinstaller --name "FileCopierPro" --windowed --onefile --clean --noconfirm `
   --add-data "venv\Lib\site-packages\PySide6\plugins;PySide6\plugins" main.py
-The .exe will be generated in the dist/ folder.
+```
 
-🛣️ Future Roadmap
+The `.exe` will be generated in the `dist/` folder.
 
- Drag & Drop support
- Light/Dark theme toggle
- Copy history & logging
- Speed graph visualization
- Queue save/load functionality
- Multi-language support
- Progress bar per task with color coding
+---
 
+## 🛣️ Future Roadmap
 
-🧪 Technologies Used
+- [ ] Drag & Drop support
+- [ ] Light/Dark theme toggle
+- [ ] Copy history & logging
+- [ ] Speed graph visualization
+- [ ] Queue save/load functionality
+- [ ] Multi-language support
+- [ ] Progress bar per task with color coding
 
-Python 3.10+
-PySide6 (Qt6 for Python)
-PyInstaller (for creating .exe)
-Threading + Signals/Slots for smooth UI updates
+---
 
+## 🧪 Technologies Used
 
-📄 License
+- Python 3.10+
+- PySide6 (Qt6 for Python)
+- PyInstaller (for creating .exe)
+- Threading + Signals/Slots for smooth UI updates
+
+---
+
+## 📄 License
+
 This project is licensed under the MIT License — feel free to use, modify, and distribute.
+
+---
 
 Made with ❤️ for fast, reliable, and beautiful file copying experience.
