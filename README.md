@@ -1,0 +1,2 @@
+# FileCopierPro
+A modern, fast, and beautiful parallel file copier built with PySide6. Supports files & folders, preview with checkboxes, pause/resume/cancel, real-time speed & ETA.  Best Features:  Parallel copying (up to 4 files at once) Full Pause / Resume / Cancel support (per task + global) Preview dialog with checkboxes before copying Support for both files and entire folders Modern dark UI with clean progress tracking Human-readable speed, size, and ETA Overall progress bar Drag & Drop ready (can be added later) Clean and professional code structure
