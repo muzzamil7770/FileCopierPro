@@ -88,19 +88,19 @@ flowchart TD
 ## 📸 Screenshots
 
 ### 1. Main Application Window
-![Main Window](public/images/screenshot1.png)
+![Main Window](public/images/_1%20(1).png)
 
 ### 2. Add Files & Folders + Preview Dialog
-![Preview Dialog](public/images/screenshot2.png)
+![Preview Dialog](public/images/_1%20(2).png)
 
 ### 3. Real-time Copying in Progress
-![Copying in Progress](public/images/screenshot3.png)
+![Copying in Progress](public/images/_1%20(3).png)
 
 ### 4. Pause / Resume / Cancel Controls
-![Controls](public/images/screenshot4.png)
+![Controls](public/images/_1%20(4).png)
 
 ### 5. Overall Progress & Completed Tasks
-![Overall Progress](public/images/screenshot5.png)
+![Overall Progress](public/images/_1%20(5).png)
 
 ---
 
